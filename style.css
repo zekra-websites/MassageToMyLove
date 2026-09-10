@@ -1,0 +1,899 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Cairo", sans-serif;
+    background: #fff7fa;
+    color: #3d2630;
+    overflow-x: hidden;
+}
+
+
+/* ================= شاشة الدخول ================= */
+
+.login-screen {
+    min-height: 100vh;
+    min-height: 100svh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+
+    position: relative;
+    overflow: hidden;
+
+    background:
+        radial-gradient(circle at 20% 20%, rgba(255,255,255,.8), transparent 25%),
+        radial-gradient(circle at 80% 80%, rgba(255,190,210,.4), transparent 30%),
+        linear-gradient(135deg, #fff1f5, #ffe0e9, #fff7fa);
+}
+
+
+.login-box {
+    width: 100%;
+    max-width: 420px;
+
+    padding: 45px 30px;
+
+    text-align: center;
+
+    background: rgba(255,255,255,.84);
+
+    border: 1px solid rgba(255,255,255,.9);
+
+    border-radius: 30px;
+
+    box-shadow:
+        0 20px 60px rgba(150,60,90,.15);
+
+    backdrop-filter: blur(12px);
+
+    position: relative;
+    z-index: 5;
+
+    animation: boxAppear 1s ease;
+}
+
+
+.login-heart {
+    width: 80px;
+    height: 80px;
+
+    margin: 0 auto 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #fff0f4;
+
+    border-radius: 50%;
+
+    font-size: 40px;
+
+    animation: heartBeat 1.5s infinite;
+}
+
+
+.login-box h1 {
+    font-size: 32px;
+    color: #63283d;
+    margin-bottom: 10px;
+}
+
+
+.login-box > p {
+    color: #86636e;
+    margin-bottom: 25px;
+}
+
+
+.login-box input {
+    width: 100%;
+    height: 55px;
+
+    border: 2px solid #f1c8d4;
+
+    border-radius: 15px;
+
+    outline: none;
+
+    padding: 0 18px;
+
+    font-family: inherit;
+    font-size: 16px;
+
+    text-align: center;
+
+    background: #fff;
+
+    transition: .3s;
+}
+
+
+.login-box input:focus {
+    border-color: #d85b7c;
+
+    box-shadow:
+        0 0 0 4px rgba(216,91,124,.1);
+}
+
+
+.login-box button {
+    width: 100%;
+    height: 55px;
+
+    margin-top: 15px;
+
+    border: none;
+    border-radius: 15px;
+
+    background:
+        linear-gradient(135deg, #d94f73, #b9365b);
+
+    color: white;
+
+    font-family: inherit;
+    font-size: 17px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: .3s;
+
+    box-shadow:
+        0 10px 25px rgba(185,54,91,.25);
+}
+
+
+.login-box button:hover {
+    transform: translateY(-2px);
+}
+
+
+.login-box button:active {
+    transform: scale(.97);
+}
+
+
+#passwordMessage {
+    min-height: 25px;
+
+    margin-top: 12px;
+
+    color: #d13f64;
+
+    font-size: 14px;
+}
+
+
+/* ================= القلوب ================= */
+
+.floating-hearts {
+    position: absolute;
+    inset: 0;
+
+    pointer-events: none;
+}
+
+
+.floating-hearts span {
+    position: absolute;
+
+    bottom: -50px;
+
+    font-size: 25px;
+
+    opacity: .35;
+
+    animation: floatHeart 8s linear infinite;
+}
+
+
+.floating-hearts span:nth-child(1) {
+    left: 10%;
+    animation-delay: 0s;
+}
+
+
+.floating-hearts span:nth-child(2) {
+    left: 25%;
+    animation-delay: 2s;
+    font-size: 18px;
+}
+
+
+.floating-hearts span:nth-child(3) {
+    left: 45%;
+    animation-delay: 4s;
+    font-size: 30px;
+}
+
+
+.floating-hearts span:nth-child(4) {
+    left: 65%;
+    animation-delay: 1s;
+    font-size: 20px;
+}
+
+
+.floating-hearts span:nth-child(5) {
+    left: 80%;
+    animation-delay: 3s;
+    font-size: 28px;
+}
+
+
+/* ================= إخفاء ================= */
+
+.hidden {
+    display: none !important;
+}
+
+
+/* ================= البداية ================= */
+
+.hero {
+    min-height: 100vh;
+    min-height: 100svh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 40px 20px;
+
+    position: relative;
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 20% 20%,
+            rgba(255,170,195,.25),
+            transparent 30%
+        ),
+
+        radial-gradient(
+            circle at 80% 80%,
+            rgba(255,190,210,.3),
+            transparent 30%
+        ),
+
+        linear-gradient(
+            135deg,
+            #fff5f8,
+            #ffe5ed
+        );
+}
+
+
+.hero-content {
+    max-width: 750px;
+
+    animation: heroAppear 1.2s ease;
+}
+
+
+.small-title {
+    display: block;
+
+    color: #b43c60;
+
+    font-size: 16px;
+    font-weight: 700;
+
+    margin-bottom: 15px;
+}
+
+
+.hero h1 {
+    font-size: clamp(38px, 8vw, 70px);
+
+    line-height: 1.25;
+
+    color: #63283d;
+
+    margin-bottom: 20px;
+}
+
+
+.hero p {
+    max-width: 650px;
+
+    margin: 0 auto 30px;
+
+    color: #785664;
+
+    font-size: 17px;
+
+    line-height: 2;
+}
+
+
+.hero button {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 14px 28px;
+
+    border: none;
+
+    border-radius: 50px;
+
+    background: #c74366;
+
+    color: white;
+
+    font-family: inherit;
+
+    font-size: 16px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 12px 30px rgba(199,67,102,.25);
+
+    transition: .3s;
+}
+
+
+.hero button:hover {
+    transform: translateY(-3px);
+}
+
+
+/* ================= الكروت ================= */
+
+.card {
+    width: 100%;
+
+    max-width: 900px;
+
+    margin: auto;
+
+    padding: 45px 35px;
+
+    background: rgba(255,255,255,.88);
+
+    border-radius: 30px;
+
+    box-shadow:
+        0 15px 50px rgba(120,50,75,.08);
+
+    border: 1px solid #f7dce4;
+
+    text-align: center;
+}
+
+
+.card h2 {
+    font-size: 30px;
+
+    color: #63283d;
+
+    margin-bottom: 25px;
+}
+
+
+/* ================= الرسالة ================= */
+
+.message-section {
+    padding: 90px 20px;
+
+    background: #fffafd;
+}
+
+
+.message-text {
+    max-width: 720px;
+
+    margin: auto;
+
+    color: #684c58;
+
+    font-size: 17px;
+
+    line-height: 2.3;
+}
+
+
+.message-text p {
+    margin-bottom: 20px;
+}
+
+
+.message-text p:last-child {
+    margin-bottom: 0;
+}
+
+
+/* ================= العداد ================= */
+
+.counter-section {
+    padding: 90px 20px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #fff7fa,
+            #ffeef3
+        );
+}
+
+
+.date {
+    color: #c74366;
+
+    font-weight: 700;
+
+    margin-bottom: 30px;
+}
+
+
+.counter {
+    display: grid;
+
+    grid-template-columns: repeat(4,1fr);
+
+    gap: 15px;
+
+    max-width: 700px;
+
+    margin: 30px auto;
+}
+
+
+.counter > div {
+    padding: 20px 10px;
+
+    background: #fff7fa;
+
+    border: 1px solid #f2d2dc;
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 8px 20px rgba(120,50,75,.05);
+}
+
+
+.counter span {
+    display: block;
+
+    font-size: 32px;
+
+    font-weight: 700;
+
+    color: #c74366;
+}
+
+
+.counter small {
+    color: #80616c;
+
+    font-size: 14px;
+}
+
+
+.counter-section .card > p:last-child {
+    color: #80616c;
+
+    line-height: 2;
+}
+
+
+/* ================= الصور ================= */
+
+.gallery-section {
+    padding: 90px 20px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #fffafd,
+            #fff1f5
+        );
+}
+
+
+.gallery-section .card > p {
+    color: #80616c;
+
+    margin-bottom: 20px;
+}
+
+
+.gallery {
+    display: grid;
+
+    grid-template-columns: repeat(2,1fr);
+
+    gap: 18px;
+
+    margin-top: 30px;
+}
+
+
+.photo-card {
+    background: white;
+
+    border-radius: 22px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 10px 30px rgba(120,50,75,.08);
+
+    transition: .3s;
+}
+
+
+.photo-card:hover {
+    transform: translateY(-5px);
+}
+
+
+.photo-card img {
+    width: 100%;
+
+    height: 260px;
+
+    object-fit: cover;
+
+    display: block;
+}
+
+
+.photo-card p {
+    padding: 15px;
+
+    color: #6d4d59;
+
+    font-weight: 600;
+}
+
+
+/* ================= النهاية ================= */
+
+.final-section {
+    padding: 90px 20px 60px;
+
+    background: #fff1f5;
+}
+
+
+.final-section .card {
+    max-width: 720px;
+
+    padding: 60px 30px;
+}
+
+
+.final-section p {
+    color: #80616c;
+
+    line-height: 2.3;
+
+    font-size: 17px;
+
+    margin-bottom: 20px;
+}
+
+
+.final-section p:last-child {
+    margin-bottom: 0;
+}
+
+
+.final-love {
+    color: #c74366 !important;
+
+    font-weight: 700;
+
+    font-size: 19px !important;
+}
+
+
+/* ================= الفوتر ================= */
+
+footer {
+    padding: 22px 15px;
+
+    text-align: center;
+
+    background: #63283d;
+
+    color: #ffe5ed;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    letter-spacing: .5px;
+}
+
+
+footer::before {
+    content: "♡ ";
+
+    font-size: 16px;
+}
+
+
+footer::after {
+    content: " ♡";
+
+    font-size: 16px;
+}
+
+
+/* ================= زر الموسيقى ================= */
+
+#music {
+    display: none;
+}
+
+
+#musicButton {
+    position: fixed;
+
+    left: 20px;
+    bottom: 20px;
+
+    width: 58px;
+    height: 58px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #d94f73,
+            #b9365b
+        );
+
+    color: white;
+
+    font-size: 24px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+
+    z-index: 9999;
+
+    box-shadow:
+        0 8px 25px rgba(185,54,91,.3);
+
+    transition: .3s;
+}
+
+
+#musicButton:hover {
+    transform: scale(1.08);
+}
+
+
+#musicButton:active {
+    transform: scale(.94);
+}
+
+
+/* ================= الحركات ================= */
+
+@keyframes boxAppear {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(30px)
+            scale(.95);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+    }
+}
+
+
+@keyframes heroAppear {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+
+@keyframes heartBeat {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    15% {
+        transform: scale(1.15);
+    }
+
+    30% {
+        transform: scale(1);
+    }
+}
+
+
+@keyframes floatHeart {
+
+    0% {
+        transform:
+            translateY(0)
+            rotate(0deg);
+
+        opacity: 0;
+    }
+
+    15% {
+        opacity: .4;
+    }
+
+    100% {
+        transform:
+            translateY(-110vh)
+            rotate(360deg);
+
+        opacity: 0;
+    }
+}
+
+
+@keyframes shake {
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    25% {
+        transform: translateX(-8px);
+    }
+
+    75% {
+        transform: translateX(8px);
+    }
+}
+
+
+/* ================= الموبايل ================= */
+
+@media (max-width: 600px) {
+
+    .login-box {
+        padding: 35px 22px;
+
+        border-radius: 25px;
+    }
+
+
+    .login-box h1 {
+        font-size: 28px;
+    }
+
+
+    .hero {
+        padding: 30px 18px;
+    }
+
+
+    .hero h1 {
+        font-size: 38px;
+    }
+
+
+    .hero p {
+        font-size: 15px;
+
+        line-height: 1.9;
+    }
+
+
+    .card {
+        padding: 35px 20px;
+
+        border-radius: 25px;
+    }
+
+
+    .card h2 {
+        font-size: 25px;
+    }
+
+
+    .message-text {
+        font-size: 15px;
+
+        line-height: 2.1;
+    }
+
+
+    .counter {
+        grid-template-columns: repeat(2,1fr);
+
+        gap: 12px;
+    }
+
+
+    .counter > div {
+        padding: 18px 8px;
+    }
+
+
+    .counter span {
+        font-size: 28px;
+    }
+
+
+    .gallery {
+        grid-template-columns: 1fr;
+    }
+
+
+    .photo-card img {
+        height: 300px;
+    }
+
+
+    .final-section .card {
+        padding: 45px 20px;
+    }
+
+
+    .final-section p {
+        font-size: 15px;
+
+        line-height: 2.1;
+    }
+
+
+    #musicButton {
+        width: 54px;
+        height: 54px;
+
+        left: 15px;
+        bottom: 15px;
+
+        font-size: 22px;
+    }
+  }
