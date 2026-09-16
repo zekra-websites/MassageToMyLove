@@ -2,21 +2,18 @@
 <html lang="ar" dir="rtl">
 
 <head>
-
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<link rel="icon" type="image/jpeg" href="images/logo.jpeg">
+    <link rel="icon" type="image/jpeg" href="images/logo.jpeg">
 
     <title>رسالة ليكي ❤️</title>
 
     <link rel="stylesheet" href="style.css">
 
     <link
-        href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&family=Playfair+Display:wght@400;500;600&display=swap"
         rel="stylesheet">
-
 </head>
 
 <body>
@@ -25,39 +22,56 @@
 
     <section id="loginScreen" class="login-screen">
 
+        <div class="background-dark"></div>
+
         <div class="floating-hearts">
-
-            <span>❤️</span>
-            <span>💗</span>
-            <span>💕</span>
-            <span>❤️</span>
-            <span>💗</span>
-
+            <span>♡</span>
+            <span>♡</span>
+            <span>♡</span>
+            <span>♡</span>
+            <span>♡</span>
         </div>
 
-        <div class="login-box">
+        <div class="login-content">
 
-            <div class="login-heart">
-                ❤️
+            <!-- الظرف -->
+            <div class="envelope">
+                <div class="envelope-back"></div>
+                <div class="envelope-paper"></div>
+                <div class="envelope-flap"></div>
+
+                <div class="wax-seal">
+                    ♥
+                </div>
             </div>
+
+            <span class="english-small">
+                A little something for you
+            </span>
 
             <h1>
                 رسالة ليكي
             </h1>
 
-            <p>
+            <p class="login-description">
                 في حاجة صغيرة معمولة مخصوص ليكي ❤️
             </p>
 
-            <input
-                type="password"
-                id="passwordInput"
-                placeholder="اكتبي الباسورد"
-            >
+            <div class="password-box">
 
-            <button onclick="checkPassword()">
-                دخول ❤️
-            </button>
+                <input
+                    type="password"
+                    id="passwordInput"
+                    placeholder="اكتبي الباسورد"
+                    autocomplete="off"
+                >
+
+                <button onclick="checkPassword()">
+                    فتح الرسالة
+                    <span>♡</span>
+                </button>
+
+            </div>
 
             <div id="passwordMessage"></div>
 
@@ -75,7 +89,13 @@
 
         <section class="hero">
 
+            <div class="hero-glow"></div>
+
             <div class="hero-content">
+
+                <div class="mini-envelope">
+                    ♥
+                </div>
 
                 <span class="small-title">
                     حاجة صغيرة من قلبي ❤️
@@ -92,9 +112,11 @@
                 </p>
 
                 <button
+                    class="main-button"
                     onclick="document.getElementById('message').scrollIntoView({behavior:'smooth'})"
                 >
-                    كملي ❤️
+                    كملي
+                    <span>♡</span>
                 </button>
 
             </div>
@@ -107,6 +129,10 @@
         <section class="message-section" id="message">
 
             <div class="card">
+
+                <div class="card-heart">
+                    ♡
+                </div>
 
                 <h2>
                     ليكي وحدكِ ❤️
@@ -198,12 +224,13 @@
 
         <!-- ================= العداد ================= -->
 
-        <section
-            class="counter-section"
-            id="story"
-        >
+        <section class="counter-section" id="story">
 
             <div class="card">
+
+                <div class="card-heart">
+                    ♡
+                </div>
 
                 <h2>
                     من أول يوم اتجمعنا فيه ❤️
@@ -252,6 +279,10 @@
 
             <div class="card">
 
+                <div class="card-heart">
+                    ♡
+                </div>
+
                 <h2>
                     حاجات تخصنا ❤️
                 </h2>
@@ -263,58 +294,23 @@
                 <div class="gallery">
 
                     <div class="photo-card">
-
-                        <img
-                            src="photo1.jpg"
-                            alt="صورة"
-                        >
-
-                        <p>
-                            ليكي ❤️
-                        </p>
-
+                        <img src="photo1.jpg" alt="صورة">
+                        <p>ليكي ❤️</p>
                     </div>
 
-
                     <div class="photo-card">
-
-                        <img
-                            src="photo2.jpg"
-                            alt="صورة"
-                        >
-
-                        <p>
-                            حاجة بحبها
-                        </p>
-
+                        <img src="photo2.jpg" alt="صورة">
+                        <p>حاجة بحبها</p>
                     </div>
 
-
                     <div class="photo-card">
-
-                        <img
-                            src="photo3.jpg"
-                            alt="صورة"
-                        >
-
-                        <p>
-                            أحلى حاجة ❤️
-                        </p>
-
+                        <img src="photo3.jpg" alt="صورة">
+                        <p>أحلى حاجة ❤️</p>
                     </div>
 
-
                     <div class="photo-card">
-
-                        <img
-                            src="photo4.jpg"
-                            alt="صورة"
-                        >
-
-                        <p>
-                            دايمًا في بالي
-                        </p>
-
+                        <img src="photo4.jpg" alt="صورة">
+                        <p>دايمًا في بالي</p>
                     </div>
 
                 </div>
@@ -329,6 +325,10 @@
         <section class="final-section">
 
             <div class="card">
+
+                <div class="card-heart">
+                    ♡
+                </div>
 
                 <h2>
                     وعد مني ليكي ❤️
@@ -396,9 +396,6 @@
         loop
     ></audio>
 
-
-    <!-- زر الموسيقى -->
-
     <button
         id="musicButton"
         onclick="toggleMusic()"
@@ -408,10 +405,7 @@
     </button>
 
 
-    <!-- ================= JavaScript ================= -->
-
     <script src="script.js"></script>
 
 </body>
-
-                            </html>
+</html>
