@@ -11,6 +11,7 @@ function checkPassword() {
     const loginScreen = document.getElementById("loginScreen");
     const mainContent = document.getElementById("mainContent");
 
+
     if (input.value === correctPassword) {
 
         loginScreen.style.display = "none";
@@ -18,6 +19,11 @@ function checkPassword() {
         mainContent.classList.remove("hidden");
 
         startMusic();
+
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
 
     } else {
 
@@ -30,11 +36,13 @@ function checkPassword() {
         input.classList.add("wrong");
 
         input.value = "";
+
     }
+
 }
 
 
-/* ================= دخول بالباسورد من الكيبورد ================= */
+/* ================= دخول بالـ Enter ================= */
 
 document.addEventListener("DOMContentLoaded", function () {
 
@@ -67,6 +75,7 @@ function startMusic() {
 
     if (!music) return;
 
+
     music.play()
         .then(function () {
 
@@ -78,6 +87,7 @@ function startMusic() {
             button.innerHTML = "🎵";
 
         });
+
 }
 
 
@@ -92,9 +102,12 @@ function toggleMusic() {
 
     if (music.paused) {
 
-        music.play();
+        music.play()
+            .then(function () {
 
-        button.innerHTML = "🔊";
+                button.innerHTML = "🔊";
+
+            });
 
     } else {
 
@@ -118,6 +131,7 @@ function updateCounter() {
 
     let difference = now - startDate;
 
+
     if (difference < 0) {
 
         difference = 0;
@@ -127,28 +141,65 @@ function updateCounter() {
 
     const seconds = Math.floor(difference / 1000);
 
-    const days = Math.floor(seconds / 86400);
+
+    const days = Math.floor(
+        seconds / 86400
+    );
+
 
     const hours = Math.floor(
         (seconds % 86400) / 3600
     );
 
+
     const minutes = Math.floor(
         (seconds % 3600) / 60
     );
+
 
     const remainingSeconds =
         seconds % 60;
 
 
-    document.getElementById("days").textContent = days;
+    const daysElement =
+        document.getElementById("days");
 
-    document.getElementById("hours").textContent = hours;
+    const hoursElement =
+        document.getElementById("hours");
 
-    document.getElementById("minutes").textContent = minutes;
+    const minutesElement =
+        document.getElementById("minutes");
 
-    document.getElementById("seconds").textContent =
-        remainingSeconds;
+    const secondsElement =
+        document.getElementById("seconds");
+
+
+    if (daysElement) {
+
+        daysElement.textContent = days;
+
+    }
+
+
+    if (hoursElement) {
+
+        hoursElement.textContent = hours;
+
+    }
+
+
+    if (minutesElement) {
+
+        minutesElement.textContent = minutes;
+
+    }
+
+
+    if (secondsElement) {
+
+        secondsElement.textContent = remainingSeconds;
+
+    }
 
 }
 
